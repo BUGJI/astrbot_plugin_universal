@@ -1,0 +1,27 @@
+{
+  "known_bots_action": {
+    "description": "bot动作配置",
+    "type": "text",
+    "hint": "请查看文档进行配置",
+  },
+  "rate_per_minute": {
+    "description": "超时时间",
+    "type": "number",
+    "default": 30,
+  },
+  "message": {
+    "description": "故障消息",
+    "type": "object",
+    "hint": "遇到故障则返回的消息",
+    "items": {
+      "timeout_message": {
+        "description": "超时消息（指定bot超时未回复）",
+        "type": "string",
+      },
+      "unreachable_message": {
+        "description": "不可达消息（没有找到指定bot）",
+        "type": "string",
+      },
+    }
+  }
+}
