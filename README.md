@@ -28,6 +28,9 @@
 | ----------------- | ----|
 | known_bots_action | 用于配置机器人的功能，依据上方格式填写，一行一个 |
 | rate_per_minute | 用于限制插件每分钟的请求数量（默认5） |
+| timeout | 用于调整任务超时时间（默认30）按秒 |
+| timeout_message | 超时后回复的内容 |
+| unreachable_message | 不可达回复的内容 |
 
 # 🐓 你太美
 
