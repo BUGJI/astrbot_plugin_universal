@@ -5,8 +5,14 @@
     "hint": "请查看文档进行配置",
   },
   "rate_per_minute": {
+    "description": "请求频率限制",
+    "type": "int",
+    "hint": "RPM 每分钟的请求次数",
+    "default": 5,
+  },
+  "timeout": {
     "description": "超时时间",
-    "type": "number",
+    "type": "int",
     "default": 30,
   },
   "message": {
