@@ -47,6 +47,9 @@ astrbot 的插件开发指南指出可实现此项目的核心api：
 - 阻止原先LLM输出（针对此bot来源阻止非命令消息，防止发生死锁，而且允许其它bot用此方法调用功能）
 - 注册LLM工具（用于告诉AI有什么工具被注册）
 
+自研技术协议：
+<img width="100" height="100" alt="image" src="https://github.com/user-attachments/assets/59643167-7417-478f-80cd-2c4a24abe274" />
+
 # ❤ 特别感谢
 
 | 名字 | 活 |
