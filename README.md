@@ -1,8 +1,10 @@
 # ⭐ 万能插件
 
-这是一个适用于AstrBot的万能插件，它可以请求其它群的bot来扩展自己的业务
+这是一个适用于AstrBot的万能插件，它可以基于其它群的bot来扩展自己的业务
 
 <img width="300" height="335" alt="运行效果" src="https://github.com/user-attachments/assets/7d0b7bc5-8f3a-4560-b44a-31812c52c80f" />
+
+此插件使用b2b技术（bot to bot）来请求，可以多个bot串联进行业务共享
 
 # ❗ 注意事项
 
