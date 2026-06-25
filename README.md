@@ -1,8 +1,8 @@
 # 🧩 UniversalPlugin
 
-**基于自研第八层 B2B（Bot-to-Bot）通信协议的 AstrBot 万能插件。**
+<img src="./logo.png" width="240" height="240" alt="" align="right"/>
 
-<img src="./logo.png" width="250" height="250" alt="" align="right"/>
+**基于自研第八层 B2B（Bot-to-Bot）通信协议的 AstrBot 万能插件。**
 
 | 优势 | 说明 |
 |---|---|
