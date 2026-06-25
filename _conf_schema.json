@@ -1,33 +1,135 @@
 {
-  "known_bots_action": {
-    "description": "bot动作配置",
-    "type": "text",
-    "hint": "请查看文档进行配置",
+   "basic": {
+    "description": "基本信息",
+    "type": "object",
+    "hint": "一些运行的必要选项",
+    "items": {
+      "complete_provider_id": {
+        "description": "指令模型",
+        "type": "string",
+        "hint": "用于选择在指令使用的LLM模型(建议快速 轻量)",
+        "default": "",
+        "_special": "select_provider"
+      },
+      "analyze_provider_id": {
+        "description": "消息分析模型",
+        "type": "string",
+        "hint": "用于选择在分析消息使用的LLM模型(如果需要准确性可以启动思考)",
+        "default": "",
+        "_special": "select_provider"
+      },
+      "notice_provider_id": {
+        "description": "错误提示模型",
+        "type": "string",
+        "hint": "用于选择在返回错误消息的LLM模型(快速 轻量 小)",
+        "default": "",
+        "invisible": true,
+        "_special": "select_provider"
+      }
+    }
   },
-  "rate_per_minute": {
-    "description": "请求频率限制",
-    "type": "int",
-    "hint": "RPM 每分钟的请求次数",
-    "default": 5,
+  "enabled_collection_group": {
+    "description": "可注册的群控制",
+    "type": "object",
+    "hint": "设置只从什么群获取功能，建议白名单以防打扰",
+    "items": {
+      "block_method": {
+        "description": "允许模式",
+        "type": "string",
+        "hint": "设置黑白名单模式",
+        "default": "whitelist",
+        "options": ["blacklist", "whitelist"]
+      },
+      "control_list": {
+        "description": "黑/白名单列表",
+        "type": "list",
+        "hint": "在这些群聊里 禁用/启用 插件，填写群号(group_id)",
+        "default": []
+      }
+    }
   },
-  "timeout": {
-    "description": "超时时间",
-    "type": "int",
-    "default": 30,
+  "reg_info": {
+    "description": "已注册的信息（实时更新）",
+    "type": "object",
+    "hint": "实时更新bot功能注册",
+    "items": {
+      "bot_list": {
+        "description": "注册的账号列表",
+        "type": "list",
+        "hint": "记录bot账号列表，作为弱黑名单防止出现无限触发LLM",
+        "default": []
+      },
+      "deny_list": {
+        "description": "忽略账号列表",
+        "type": "list",
+        "hint": "针对信息注册的强黑名单，可以防止用户误被注册成机器人",
+        "default": []
+      }
+    }
   },
-  "message": {
-    "description": "故障消息",
+  "limit": {
+    "description": "限制设置",
+    "type": "object",
+    "items": {
+      "auto_analyze_crontab": {
+        "description": "自动分析定时",
+        "type": "string",
+        "hint": "使用crontab的定时，获取群聊bot和信息",
+        "default": "12 12 * * *"
+      },
+      "rate_per_minute": {
+        "description": "请求频率限制",
+        "type": "int",
+        "hint": "RPM 每分钟的请求次数",
+        "default": 5
+      },
+      "timeout": {
+        "description": "超时时间",
+        "type": "int",
+        "invisible": true,
+        "default": 30
+      },
+      "auto_reg_bot_functions": {
+        "description": "允许自动测试并且加入bot功能列表",
+        "type": "bool",
+        "hint": "允许在分析后自动更新bot功能",
+        "default": true
+      },
+      "enable_b2b": {
+        "description": "允许其他bot使用你的功能",
+        "type": "bool",
+        "hint": "允许共享你的机器人功能给其他bot使用",
+        "default": true
+      },
+      "layer_protection": {
+        "description": "层级保护",
+        "type": "bool",
+        "hint": "如果检测其他机器人使用你注册的中转功能，则阻止上游使用，防止多个bot串联",
+        "default": false
+      }
+    }
+  },
+  "notice": {
+    "description": "提示消息",
     "type": "object",
     "hint": "遇到故障则返回的消息",
     "items": {
-      "timeout_message": {
+      "error_provider": {
+        "description": "使用LLM错误提示",
+        "hint": "启用则由LLM风格回复错误消息(下方则为提示词)",
+        "type": "bool",
+        "default": false
+      },
+      "timeout": {
         "description": "超时消息（指定bot超时未回复）",
         "type": "string",
+        "default": "服务开小差了，请稍后重试"
       },
-      "unreachable_message": {
+      "unreachable": {
         "description": "不可达消息（没有找到指定bot）",
         "type": "string",
-      },
+        "default": "服务不可用"
+      }
     }
   }
 }
