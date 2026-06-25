@@ -13,7 +13,8 @@
 
 ## ⭐ 插件市场的智创，AI界的奋变
 
-<img width="500" height="333" alt="aebdde72056e426e757eee5502a44a56" src="https://github.com/user-attachments/assets/8fb88192-0437-4067-92dd-6ebe327481c1" align="right"/>
+<img width="350" height="525" alt="c07b3844371ed86896931ff0aaecfd5d" src="https://github.com/user-attachments/assets/1f170d29-659d-4031-9d21-9f96d2380c6a" align="right"/>
+
 
 我们解决了市场痛点，让更多人拥抱AI，拥抱未来
 
